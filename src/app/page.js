@@ -27,6 +27,7 @@ export default async function Home() {
           <Link href="/blog" className="hover:text-green-400 transition">Blog</Link>
           <Link href="/tools" className="hover:text-green-400 transition">Tools</Link>
           <Link href="/resources" className="hover:text-green-400 transition">Resources</Link>
+          <Link href="/bundles" className="hover:text-yellow-400 transition">Bundles</Link>
           <a href="https://www.youtube.com/@AlphaWithShivam" target="_blank" className="hover:text-red-400 transition">YouTube</a>
         </div>
       </nav>
