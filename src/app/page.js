@@ -1,6 +1,7 @@
 import { client } from "../../sanity/lib/client"
 import { urlFor } from "../../sanity/lib/image"
 import Link from "next/link"
+import Navbar from "@/components/Navbar"
 
 async function getLatestPosts() {
   return await client.fetch(`
@@ -21,16 +22,8 @@ export default async function Home() {
     <main className="min-h-screen bg-gray-950 text-white">
 
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-8 py-4 border-b border-gray-800">
-        <span className="text-green-400 font-bold text-lg">AlphaWithShivam</span>
-        <div className="flex gap-6 text-sm text-gray-400">
-          <Link href="/blog" className="hover:text-green-400 transition">Blog</Link>
-          <Link href="/tools" className="hover:text-green-400 transition">Tools</Link>
-          <Link href="/resources" className="hover:text-green-400 transition">Resources</Link>
-          <Link href="/bundles" className="hover:text-yellow-400 transition">Bundles</Link>
-          <a href="https://www.youtube.com/@AlphaWithShivam" target="_blank" className="hover:text-red-400 transition">YouTube</a>
-        </div>
-      </nav>
+      <Navbar />
+      
 
       {/* Hero */}
       <section className="text-center py-20 px-4 border-b border-gray-800">

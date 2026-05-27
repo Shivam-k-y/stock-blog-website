@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Navbar from "@/components/Navbar"
 
 const bundles = [
   {
@@ -51,15 +52,9 @@ export default function BundlesPage() {
     <div className="min-h-screen bg-gray-950 text-white">
 
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-8 py-4 border-b border-gray-800">
-        <Link href="/" className="text-green-400 font-bold text-lg">AlphaWithShivam</Link>
-        <div className="flex gap-6 text-sm text-gray-400">
-          <Link href="/blog" className="hover:text-green-400 transition">Blog</Link>
-          <Link href="/tools" className="hover:text-green-400 transition">Tools</Link>
-          <Link href="/bundles" className="text-green-400">Bundles</Link>
-        </div>
-      </nav>
+      <Navbar />
 
+      {/* Hero */}
       {/* Hero */}
       <section className="text-center py-14 px-4 border-b border-gray-800">
         <span className="bg-green-900 text-green-400 text-xs px-3 py-1 rounded-full font-semibold">
