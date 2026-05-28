@@ -28,8 +28,8 @@ export default async function Home() {
       {/* Hero */}
       <section className="text-center py-20 px-4 border-b border-gray-800">
         <h1 className="text-4xl font-bold mb-4 leading-tight">
-          Understand the <span className="text-green-400">Stock Market</span><br />
-          And Invest Wisely
+        Stock Market <span className="text-green-400">Hindi Mein</span><br />
+        Samjho Aur Invest Wisely.
         </h1>
         <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
           Free tools, expert articles, and resources — for beginners to experts
