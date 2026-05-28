@@ -5,72 +5,75 @@ const services = [
   {
     emoji: "🌐",
     name: "Stock Market Website",
-    desc: "Blog, tools aur resources ke saath complete website",
+    desc: "Complete website with blog, tools, and resources",
     time: "5-7 days",
     price: "₹8,000 - ₹20,000",
   },
   {
     emoji: "📚",
     name: "Trading Course Website",
-    desc: "Course sell karne ke liye professional landing page",
+    desc: "Professional landing page to sell your course",
     time: "4-6 days",
     price: "₹10,000 - ₹25,000",
   },
   {
     emoji: "🧮",
     name: "Finance Tools",
-    desc: "SIP, brokerage, position size calculators",
+    desc: "SIP, brokerage, and position size calculators",
     time: "2-3 days",
     price: "₹3,000 - ₹8,000",
   },
   {
     emoji: "✍️",
     name: "Finance Blog Setup",
-    desc: "Sanity CMS ke saath complete blog website",
+    desc: "Complete blog website with Sanity CMS",
     time: "3-5 days",
     price: "₹5,000 - ₹15,000",
   },
   {
     emoji: "📺",
     name: "YouTube Channel Website",
-    desc: "Creator ke liye personal brand website",
+    desc: "Personal brand website for creators",
     time: "3-5 days",
     price: "₹5,000 - ₹12,000",
   },
   {
     emoji: "📦",
     name: "Digital Product Page",
-    desc: "Bundle ya course sell karne ke liye sales page",
+    desc: "Sales page to sell bundles or courses",
     time: "1-2 days",
     price: "₹2,000 - ₹5,000",
   },
 ]
 
 const process = [
-  { step: "01", title: "WhatsApp Karo", desc: "Project ke baare mein baat karo — free consultation" },
-  { step: "02", title: "Quote Milega", desc: "24 ghante mein price aur timeline bataunga" },
-  { step: "03", title: "50% Advance", desc: "Kaam shuru karne se pehle half payment" },
-  { step: "04", title: "Website Ready", desc: "Time pe deliver — revisions free hain" },
+  { step: "01", title: "Message on WhatsApp", desc: "Talk about your project — free consultation" },
+  { step: "02", title: "Get a Quote", desc: "Price and timeline within 24 hours" },
+  { step: "03", title: "50% Advance", desc: "Half payment before work begins" },
+  { step: "04", title: "Website Ready", desc: "Delivered on time — revisions included" },
 ]
 
 const faqs = [
   {
-    q: "Kya aap sirf finance websites banate ho?",
-    a: "Main finance niche mein specialize karta hun kyunki mujhe stock market ka bhi knowledge hai — isliye better websites banta hun is field mein.",
+    q: "Do you only build finance websites?",
+    a: "I specialize in the finance niche because I understand the stock market too — so I build better websites in this field.",
   },
   {
-    q: "Hosting aur domain ka kya?",
-    a: "Main Vercel pe free hosting setup kar deta hun. Domain alag se lena hoga — Namecheap pe ~₹500/year milta hai.",
+    q: "What about hosting and domain?",
+    a: "I set up free hosting on Vercel. You will need to buy a domain separately — around ₹500/year on Namecheap.",
   },
   {
-    q: "Revisions kitni baar milegi?",
-    a: "Delivery ke baad 3 free revisions milenge. Major changes ke liye alag charge hoga.",
+    q: "How many revisions are included?",
+    a: "You get 3 free revisions after delivery. Major changes are charged separately.",
   },
   {
-    q: "Payment kaise karein?",
-    a: "UPI, bank transfer ya any other method — jo convenient ho.",
+    q: "How do I pay?",
+    a: "UPI, bank transfer, or any other method — whatever is convenient for you.",
   },
 ]
+
+const WHATSAPP_URL =
+  "https://wa.me/916202823588?text=Hi%20Shivam%2C%20I%20need%20a%20website%20built"
 
 export default function HireMePage() {
   return (
@@ -85,24 +88,24 @@ export default function HireMePage() {
           AVAILABLE FOR WORK ✅
         </span>
         <h1 className="text-4xl font-bold mt-5 mb-4">
-          Finance <span className="text-green-400">Website</span> Banwao<br />
-          Stock Market Expert Se
+          Get a <span className="text-green-400">Finance Website</span> Built<br />
+          By a Stock Market Expert
         </h1>
         <p className="text-gray-400 text-lg max-w-xl mx-auto mb-8">
-          Main ek web developer hun jo stock market bhi samjhta hai —
-          isliye finance websites better banata hun
+          I am a web developer who also understands the stock market —
+          so I build better finance websites
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <a
-            href="https://wa.me/916202823588?text=Hi%20Shivam%2C%20mujhe%20website%20banwani%20hai"
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
             className="bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-3 rounded-xl transition">
-            💬 WhatsApp Karo
+            💬 Message on WhatsApp
           </a>
           <a href="#services"
             className="border border-gray-700 hover:border-green-400 px-8 py-3 rounded-xl transition">
-            Services Dekho →
+            View Services →
           </a>
         </div>
       </section>
@@ -110,13 +113,13 @@ export default function HireMePage() {
       {/* Why Me */}
       <section className="px-6 py-12 border-b border-gray-800 max-w-4xl mx-auto">
         <h2 className="text-2xl font-bold text-center mb-8">
-          Mujhe Kyun <span className="text-green-400">Choose Karo?</span>
+          Why <span className="text-green-400">Choose Me?</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
-            { emoji: "📈", title: "Stock Market Knowledge", desc: "Sirf developer nahi hun — finance bhi samjhta hun. Isliye teri website ka content aur tools better hoga." },
-            { emoji: "⚡", title: "Fast Delivery", desc: "Simple websites 2-3 din mein, complex projects 7 din mein — time waste nahi karta." },
-            { emoji: "💰", title: "Affordable Price", desc: "Agency se ₹50,000 mein jo milega woh main ₹10,000 mein deta hun — quality same." },
+            { emoji: "📈", title: "Stock Market Knowledge", desc: "Not just a developer — I understand finance too. Your website content and tools will be stronger." },
+            { emoji: "⚡", title: "Fast Delivery", desc: "Simple websites in 2–3 days, complex projects in 7 days — no wasted time." },
+            { emoji: "💰", title: "Affordable Price", desc: "What agencies charge ₹50,000 for, I deliver at ₹10,000 — same quality." },
           ].map((item) => (
             <div key={item.title} className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
               <div className="text-4xl mb-3">{item.emoji}</div>
@@ -131,7 +134,7 @@ export default function HireMePage() {
       <section id="services" className="px-6 py-12 border-b border-gray-800">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">
-            Kya Kya <span className="text-green-400">Bana Sakta Hun?</span>
+            What Can I <span className="text-green-400">Build?</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {services.map((service) => (
@@ -156,7 +159,7 @@ export default function HireMePage() {
       <section className="px-6 py-12 border-b border-gray-800">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">
-            Kaam Kaise <span className="text-green-400">Hota Hai?</span>
+            How Does It <span className="text-green-400">Work?</span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {process.map((p) => (
@@ -174,7 +177,7 @@ export default function HireMePage() {
       <section className="px-6 py-12 border-b border-gray-800">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">
-            Mera <span className="text-green-400">Portfolio</span>
+            My <span className="text-green-400">Portfolio</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-gray-900 border border-green-800 rounded-2xl p-6">
@@ -184,7 +187,7 @@ export default function HireMePage() {
               </div>
               <p className="text-gray-400 text-sm mb-4">
                 Stock market blog + free tools + resources website —
-                Next.js, Sanity CMS, Tailwind CSS se banaya
+                built with Next.js, Sanity CMS, and Tailwind CSS
               </p>
               <div className="flex gap-2 flex-wrap mb-4">
                 {["Next.js", "Sanity CMS", "Tailwind", "Vercel"].map((tag) => (
@@ -192,23 +195,23 @@ export default function HireMePage() {
                 ))}
               </div>
               <Link href="/" className="text-green-400 text-sm hover:underline">
-                Website dekho →
+                View website →
               </Link>
             </div>
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 flex items-center justify-center text-center">
               <div>
                 <div className="text-4xl mb-3">🚀</div>
                 <p className="text-gray-400 text-sm">
-                  Tera project yahan dikh sakta hai!<br />
-                  Pehle client ban jao.
+                  Your project could be featured here!<br />
+                  Become the first client.
                 </p>
                 
                   <a
-                    href="https://wa.me/916202823588?text=Hi%20Shivam%2C%20mujhe%20website%20banwani%20hai"
+                    href={WHATSAPP_URL}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-block mt-4 text-green-400 text-sm hover:underline">
-                    Baat karo →
+                    Get in touch →
                   </a>
               </div>
             </div>
@@ -220,7 +223,7 @@ export default function HireMePage() {
       <section className="px-6 py-12 border-b border-gray-800">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">
-            Aksar Pooche Jaane Wale <span className="text-green-400">Sawaal</span>
+            Frequently Asked <span className="text-green-400">Questions</span>
           </h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
@@ -238,22 +241,22 @@ export default function HireMePage() {
         <div className="max-w-lg mx-auto text-center">
           <div className="text-5xl mb-4">💬</div>
           <h2 className="text-2xl font-bold mb-3">
-            Baat Karte Hain?
+            Let&apos;s Talk?
           </h2>
           <p className="text-gray-400 mb-6">
-            Free consultation ke liye WhatsApp karo — project discuss karenge,
-            quote dunga, kaam shuru karenge
+            Message on WhatsApp for a free consultation — we will discuss your project,
+            I will send a quote, and we can get started
           </p>
           
           <a
-            href="https://wa.me/916202823588?text=Hi%20Shivam%2C%20mujhe%20website%20banwani%20hai"
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
             className="inline-block bg-green-500 hover:bg-green-400 text-black font-bold px-10 py-4 rounded-xl text-lg transition">
-            WhatsApp Karo → 6202823588
+            WhatsApp → 6202823588
           </a>
           <p className="text-gray-600 text-xs mt-4">
-            Usually 1-2 ghante mein reply karta hun
+            I usually reply within 1–2 hours
           </p>
         </div>
       </section>

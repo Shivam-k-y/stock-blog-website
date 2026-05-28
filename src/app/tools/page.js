@@ -3,28 +3,28 @@ import Link from "next/link"
 const tools = [
   {
     name: "SIP Calculator",
-    desc: "Monthly investment ki future value calculate karo",
+    desc: "Calculate the future value of monthly investments",
     emoji: "📈",
     href: "/tools/sip",
     ready: true,
   },
   {
     name: "Risk/Reward Calculator",
-    desc: "Trade ka ratio calculate karo",
+    desc: "Calculate your trade risk/reward ratio",
     emoji: "⚖️",
     href: "/tools/rr",
     ready: false,
   },
   {
     name: "Position Size Calculator",
-    desc: "Sahi lot size nikalo",
+    desc: "Find the right lot size for your trade",
     emoji: "📊",
     href: "/tools/position",
     ready: false,
   },
   {
     name: "Brokerage Calculator",
-    desc: "Zerodha/Upstox charges calculate karo",
+    desc: "Calculate Zerodha/Upstox charges",
     emoji: "🧾",
     href: "/tools/brokerage",
     ready: false,
@@ -35,7 +35,7 @@ export default function ToolsPage() {
   return (
     <div className="min-h-screen bg-gray-950 text-white p-8">
       <h1 className="text-3xl font-bold text-green-400 mb-2">Free Tools</h1>
-      <p className="text-gray-400 mb-8">Stock market ke liye free calculators</p>
+      <p className="text-gray-400 mb-8">Free calculators for the stock market</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
         {tools.map((tool) => (
@@ -46,7 +46,7 @@ export default function ToolsPage() {
                 <div>
                   <h2 className="font-semibold text-lg">{tool.name}</h2>
                   <p className="text-gray-400 text-sm mt-1">{tool.desc}</p>
-                  <span className="text-green-400 text-xs mt-2 inline-block">Use karo →</span>
+                  <span className="text-green-400 text-xs mt-2 inline-block">Use now →</span>
                 </div>
               </div>
             </Link>

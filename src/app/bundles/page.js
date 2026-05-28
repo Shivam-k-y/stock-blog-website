@@ -1,4 +1,3 @@
-import Link from "next/link"
 import Navbar from "@/components/Navbar"
 
 const bundles = [
@@ -8,7 +7,7 @@ const bundles = [
     emoji: "🎬",
     price: 99,
     original: 4999,
-    description: "Video editors ke liye ultimate bundle — templates, LUTs, transitions, sound effects aur bahut kuch!",
+    description: "The ultimate bundle for video editors — templates, LUTs, transitions, sound effects, and much more!",
     features: [
       "500GB+ Premium Content",
       "Video Templates",
@@ -41,10 +40,10 @@ const bundles = [
 ]
 
 const steps = [
-  { step: "01", title: "WhatsApp karo", desc: "6202823588 pe message bhejo" },
-  { step: "02", title: "Payment karo", desc: "₹99 UPI/bank transfer karo" },
-  { step: "03", title: "Screenshot bhejo", desc: "Payment proof WhatsApp pe bhejo" },
-  { step: "04", title: "Access pao", desc: "Turant bundle link mil jaayega" },
+  { step: "01", title: "Message on WhatsApp", desc: "Send a message to 6202823588" },
+  { step: "02", title: "Make payment", desc: "Pay ₹99 via UPI or bank transfer" },
+  { step: "03", title: "Send screenshot", desc: "Send payment proof on WhatsApp" },
+  { step: "04", title: "Get access", desc: "Receive your bundle link instantly" },
 ]
 
 export default function BundlesPage() {
@@ -55,7 +54,6 @@ export default function BundlesPage() {
       <Navbar />
 
       {/* Hero */}
-      {/* Hero */}
       <section className="text-center py-14 px-4 border-b border-gray-800">
         <span className="bg-green-900 text-green-400 text-xs px-3 py-1 rounded-full font-semibold">
           LIMITED TIME OFFER
@@ -64,7 +62,7 @@ export default function BundlesPage() {
           Creator <span className="text-green-400">Bundles</span>
         </h1>
         <p className="text-gray-400 text-lg max-w-lg mx-auto">
-          Video creators ke liye premium bundles — sirf ₹99 mein lifetime access
+          Premium bundles for video creators — lifetime access for just ₹99
         </p>
       </section>
 
@@ -119,7 +117,7 @@ export default function BundlesPage() {
       {/* How to Get */}
       <section className="px-6 py-12 border-t border-gray-800 max-w-4xl mx-auto">
         <h2 className="text-2xl font-bold text-center mb-10">
-          Kaise <span className="text-green-400">Milega?</span>
+          How to <span className="text-green-400">Get It</span>
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {steps.map((s) => (
@@ -136,9 +134,9 @@ export default function BundlesPage() {
       <section className="px-6 py-12 border-t border-gray-800">
         <div className="max-w-lg mx-auto bg-gray-900 border border-green-800 rounded-2xl p-8 text-center">
           <div className="text-5xl mb-4">💬</div>
-          <h2 className="text-2xl font-bold mb-2">Abhi Order Karo</h2>
+          <h2 className="text-2xl font-bold mb-2">Order Now</h2>
           <p className="text-gray-400 mb-6">
-            WhatsApp pe message karo — turant reply milega
+            Message on WhatsApp — you will get a quick reply
           </p>
           
             <a
@@ -147,10 +145,10 @@ export default function BundlesPage() {
               rel="noreferrer"
               className="inline-block bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-4 rounded-xl text-lg transition"
             >
-              WhatsApp Karo → 6202823588
+              WhatsApp → 6202823588
             </a>
           <p className="text-gray-600 text-xs mt-4">
-            Payment ke baad screenshot bhejo — turant access milega
+            Send a screenshot after payment — access is granted instantly
           </p>
         </div>
       </section>

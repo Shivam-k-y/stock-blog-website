@@ -28,20 +28,20 @@ export default async function Home() {
       {/* Hero */}
       <section className="text-center py-20 px-4 border-b border-gray-800">
         <h1 className="text-4xl font-bold mb-4 leading-tight">
-          Stock Market <span className="text-green-400">Hindi Mein</span> Samjho<br />
-          Aur Sahi Invest Karo
+          Understand the <span className="text-green-400">Stock Market</span><br />
+          And Invest Wisely
         </h1>
         <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
-          Free tools, expert articles aur resources — beginners se experts tak sab ke liye
+          Free tools, expert articles, and resources — for beginners to experts
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Link href="/blog"
             className="bg-green-500 hover:bg-green-400 text-black font-bold px-6 py-3 rounded-lg transition">
-            Blog Padho →
+            Read the Blog →
           </Link>
           <Link href="/tools"
             className="border border-gray-700 hover:border-green-400 px-6 py-3 rounded-lg transition">
-            Free Tools Try Karo
+            Try Free Tools
           </Link>
         </div>
       </section>
@@ -106,10 +106,10 @@ export default async function Home() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { name: "SIP Calculator", desc: "Future value nikalo", href: "/tools/sip", ready: true },
-            { name: "Risk/Reward", desc: "Trade ratio calculate karo", href: "/tools/rr", ready: false },
-            { name: "Position Size", desc: "Lot size nikalo", href: "/tools/position", ready: false },
-            { name: "Brokerage Calc", desc: "Charges calculate karo", href: "/tools/brokerage", ready: false },
+            { name: "SIP Calculator", desc: "Calculate future value", href: "/tools/sip", ready: true },
+            { name: "Risk/Reward", desc: "Calculate trade ratio", href: "/tools/rr", ready: false },
+            { name: "Position Size", desc: "Find the right lot size", href: "/tools/position", ready: false },
+            { name: "Brokerage Calc", desc: "Calculate brokerage charges", href: "/tools/brokerage", ready: false },
           ].map((tool) => (
             tool.ready ? (
               <Link href={tool.href} key={tool.name}>
@@ -138,7 +138,7 @@ export default async function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { name: "Candlestick PDF", type: "Hindi guide", emoji: "📄" },
+              { name: "Candlestick PDF", type: "Beginner guide", emoji: "📄" },
               { name: "Trading Journal", type: "Excel template", emoji: "📊" },
               { name: "Beginner Checklist", type: "Free download", emoji: "✅" },
             ].map((res) => (
@@ -158,15 +158,15 @@ export default async function Home() {
         <div className="bg-gray-900 rounded-2xl p-8 flex gap-6 items-center flex-wrap">
           <span className="text-6xl">📺</span>
           <div>
-            <h2 className="text-2xl font-bold mb-2">YouTube Pe Bhi Milte Hain</h2>
+            <h2 className="text-2xl font-bold mb-2">Find Us on YouTube Too</h2>
             <p className="text-gray-400 mb-4">
-              Stock market, trading strategies aur investing tips — Hindi mein simple videos har hafte
+              Stock market, trading strategies, and investing tips — simple videos every week
             </p>
             <a
               href="https://www.youtube.com/@AlphaWithShivam"
               target="_blank"
               className="bg-red-600 hover:bg-red-500 text-white font-bold px-6 py-3 rounded-lg inline-block transition">
-              ▶ Channel Subscribe Karo
+              ▶ Subscribe to the Channel
             </a>
           </div>
         </div>
