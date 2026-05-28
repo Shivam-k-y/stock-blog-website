@@ -1,6 +1,7 @@
 import { client } from "../../../sanity/lib/client"
 import { urlFor } from "../../../sanity/lib/image"
 import Link from "next/link"
+import Navbar from "@/components/Navbar"
 
 async function getPosts() {
   return await client.fetch(`
@@ -20,8 +21,18 @@ export default async function BlogPage() {
   const posts = await getPosts()
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white p-8">
-      <h1 className="text-3xl font-bold text-green-400 mb-8">Blog</h1>
+      <div className="min-h-screen bg-gray-950 text-white ">
+
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Hero */}
+      <section className="text-center border-b border-gray-800 py-5 px-4">
+        <h1 className="text-4xl font-bold mb-4 leading-tight"> <span className="text-green-400"> Blog </span> </h1>
+      </section>
+
+      {/* Blog */}
+      <section className="px-6 py-12 max-w-4xl mx-auto">
       <div className="max-w-2xl mx-auto">
         {posts.map((post) => (
           <Link href={`/blog/${post.slug.current}`} key={post.slug.current}>
@@ -59,6 +70,7 @@ export default async function BlogPage() {
           </Link>
         ))}
       </div>
+      </section>
     </div>
   )
 }

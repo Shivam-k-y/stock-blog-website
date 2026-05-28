@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Navbar from "@/components/Navbar"
 
 const tools = [
   {
@@ -33,10 +34,18 @@ const tools = [
 
 export default function ToolsPage() {
   return (
-    <div className="min-h-screen bg-gray-950 text-white p-8">
-      <h1 className="text-3xl font-bold text-green-400 mb-2">Free Tools</h1>
-      <p className="text-gray-400 mb-8">Free calculators for the stock market</p>
+    <div className="min-h-screen bg-gray-950 text-white ">
 
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Hero */}
+      <section className="text-center border-b border-gray-800 py-5 px-4">
+        <h1 className="text-4xl font-bold mb-4 leading-tight"> <span className="text-green-400"> Free Tools </span> </h1>
+      </section>
+
+      {/* Tools */}
+      <section className="px-6 py-12 max-w-4xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
         {tools.map((tool) => (
           tool.ready ? (
@@ -61,8 +70,9 @@ export default function ToolsPage() {
               </div>
             </div>
           )
-        ))}
-      </div>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

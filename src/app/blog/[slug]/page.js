@@ -1,11 +1,13 @@
 import { client } from "../../../../sanity/lib/client"
 import { urlFor } from "../../../../sanity/lib/image"
 import { PortableText } from "@portabletext/react"
+import Navbar from "@/components/Navbar"
 
 async function getPost(slug) {
   return await client.fetch(`
     *[_type == "post" && slug.current == $slug][0] {
       title,
+      excerpt,
       body,
       publishedAt,
       mainImage,
@@ -21,15 +23,18 @@ export default async function PostPage({ params }) {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
-      
+
+      {/* Navbar */}
+      <Navbar />
+
       {/* Cover Image */}
-      {post.mainImage && (
+      {/* {post.mainImage && (
         <img
           src={urlFor(post.mainImage).width(1200).url()}
           alt={post.title}
           className="w-full h-72 object-cover"
         />
-      )}
+      )} */}
 
       <div className="max-w-2xl mx-auto p-8">
 
