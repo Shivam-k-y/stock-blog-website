@@ -36,6 +36,7 @@ const books = [
     price: "",
     badge: "Bestseller",
     badgeColor: "bg-yellow-900 text-yellow-400",
+    flipkart: "https://fktr.in/lG9zNWt",
     affiliate: "https://www.amazon.in/s?k=the+intelligent+investor&tag=alphawithshiv-21",
     emoji: "📘",
   },
@@ -46,6 +47,7 @@ const books = [
     price: "",
     badge: "Must Read",
     badgeColor: "bg-green-900 text-green-400",
+    flipkart: "https://fktr.in/pRAP28R",
     affiliate: "https://www.amazon.in/s?k=trading+in+the+zone&tag=alphawithshiv-21",
     emoji: "📗",
   },
@@ -56,6 +58,7 @@ const books = [
     price: "",
     badge: "Popular",
     badgeColor: "bg-blue-900 text-blue-400",
+    flipkart: "https://fktr.in/36boxxg",
     affiliate: "https://www.amazon.in/s?k=how+to+make+money+in+stocks&tag=alphawithshiv-21",
     emoji: "📙",
   },
@@ -66,6 +69,7 @@ const books = [
     price: "",
     badge: "Advanced",
     badgeColor: "bg-purple-900 text-purple-400",
+    flipkart: "https://fktr.in/RusszUo",
     affiliate: "https://www.amazon.in/s?k=technical+analysis+financial+markets+murphy&tag=alphawithshiv-21",
     emoji: "📕",
   },
@@ -76,6 +80,7 @@ const books = [
     price: "",
     badge: "Beginner Friendly",
     badgeColor: "bg-green-900 text-green-400",
+    flipkart: "https://fktr.in/fUBAAD5",
     affiliate: "https://www.amazon.in/s?k=one+up+on+wall+street&tag=alphawithshiv-21",
     emoji: "📒",
   },
@@ -86,6 +91,7 @@ const books = [
     price: "",
     badge: "All Time Classic",
     badgeColor: "bg-orange-900 text-orange-400",
+    flipkart: "https://fktr.in/mbtCkSu",
     affiliate: "https://www.amazon.in/s?k=rich+dad+poor+dad&tag=alphawithshiv-21",
     emoji: "📓",
   },
@@ -194,31 +200,35 @@ export default function ResourcesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-            {books.map((book) => (
-              <div key={book.name}
-                className="bg-gray-900 border border-gray-800 hover:border-green-400 transition rounded-2xl p-6 flex gap-4">
-                <span className="text-5xl">{book.emoji}</span>
-                <div className="flex-1">
-                  <div className="flex justify-between items-start gap-2 flex-wrap">
-                    <h3 className="font-bold">{book.name}</h3>
-                    <span className={`text-xs px-2 py-1 rounded-full shrink-0 ${book.badgeColor}`}>
-                      {book.badge}
-                    </span>
-                  </div>
-                  <p className="text-green-400 text-xs mt-1">by {book.author}</p>
-                  <p className="text-gray-400 text-sm mt-2 leading-relaxed">{book.desc}</p>
-                  <div className="flex justify-between items-center mt-4">
-                    <span className="text-white font-bold">{book.price}</span>
-                    <a
-                      href={book.affiliate}
-                      target="_blank"
-                      className="bg-yellow-500 hover:bg-yellow-400 text-black text-xs font-bold px-4 py-2 rounded-lg transition">
-                      Buy on Amazon →
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
+          {books.map((book) => (
+  <div key={book.name}
+    className="bg-gray-900 border border-gray-800 hover:border-green-400 transition rounded-2xl p-6 flex gap-4">
+    <span className="text-5xl">{book.emoji}</span>
+    <div className="flex-1">
+      <div className="flex justify-between items-start gap-2 flex-wrap">
+        <h3 className="font-bold">{book.name}</h3>
+        <span className={`text-xs px-2 py-1 rounded-full shrink-0 ${book.badgeColor}`}>
+          {book.badge}
+        </span>
+      </div>
+      <p className="text-green-400 text-xs mt-1">by {book.author}</p>
+      <p className="text-gray-400 text-sm mt-2 leading-relaxed">{book.desc}</p>
+      <p className="text-white font-bold mt-3">{book.price}</p>
+
+      {/* Dono Buttons */}
+      <div className="flex gap-2 mt-3 flex-wrap">
+        <a href={book.flipkart} target="_blank"
+          className="bg-yellow-500 hover:bg-yellow-400 text-black text-xs font-bold px-4 py-2 rounded-lg transition">
+          Flipkart →
+        </a>
+        <a href={book.affiliate} target="_blank"
+          className="bg-blue-500 hover:bg-blue-400 text-white text-xs font-bold px-4 py-2 rounded-lg transition">
+          Amazon →
+        </a>
+      </div>
+    </div>
+  </div>
+))}
           </div>
         </div>
       </section>
