@@ -163,14 +163,13 @@ export default function ResourcesPage() {
             <h2 className="text-2xl font-bold">
               Free <span className="text-green-400">Downloads</span>
             </h2>
-            <span className="text-yellow-500 text-sm">Coming soon...</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {freeResources.map((res) => (
     <div key={res.name}
       className={`bg-gray-900 border rounded-2xl p-6 transition
         ${res.available
-          ? "border-green-800 hover:border-green-400"
+          ? "border-gray-800 hover:border-green-400"
           : "border-gray-800 opacity-60 cursor-not-allowed"
         }`}>
       <span className="text-4xl">{res.emoji}</span>

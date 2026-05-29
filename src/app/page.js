@@ -134,19 +134,33 @@ export default async function Home() {
         <section className="px-8 py-10 border-b border-gray-800">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold">Free Resources</h2>
-            <span className="text-yellow-600 text-sm">Coming soon...</span>
+            <Link href="/resources/" className="text-green-400 text-sm hover:underline">See all →</Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { name: "Candlestick PDF", type: "Beginner guide", emoji: "📄" },
-              { name: "Trading Journal", type: "Excel template", emoji: "📊" },
-              { name: "Beginner Checklist", type: "Free download", emoji: "✅" },
+              { name: "Candlestick PDF", type: "Beginner guide", emoji: "📄" , available: true,href: "https://drive.google.com/uc?export=download&id=1ZabHtF3YCYtdSjPgpQ7EtxrPJzTjX95H" },
+              { name: "Trading Journal", type: "Excel template", emoji: "📊" , available: false,href: "#" },
+              { name: "Beginner Checklist", type: "Free download", emoji: "✅" ,available: false,href: "#" },
             ].map((res) => (
-              <div key={res.name} className="bg-gray-900 rounded-xl border border-gray-800 p-5 flex gap-4 items-center opacity-50 cursor-not-allowed">
+              <div key={res.name} className={`bg-gray-900 rounded-xl border border-gray-800 p-5 flex gap-4 items-center 
+                ${res.available
+                  ? " hover:border-green-400"
+                  : "border-gray-800 opacity-60 cursor-not-allowed"
+                } `}>
                 <span className="text-3xl">{res.emoji}</span>
                 <div>
                   <div className="font-semibold text-sm">{res.name}</div>
-                  <div className="text-yellow-600 text-xs mt-1">Coming soon...</div>
+                  {res.available ? (
+          
+                    <a download  name={res.name} href={res.href}
+                      className="inline-block mt-4 bg-green-500 hover:bg-green-400 text-black text-xs font-bold px-4 py-2 rounded-lg transition">
+                      ⬇ Free Download
+                    </a>
+                  ) : (
+                      <span className="text-yellow-500 text-xs mt-3 inline-block">
+                        Coming soon...
+                      </span>
+                      )}
                 </div>
               </div>
             ))}
