@@ -7,8 +7,8 @@ const freeResources = [
     name: "Candlestick Patterns PDF",
     desc: "Complete guide to all major candlestick patterns with examples",
     type: "Free PDF",
-    href: "#",
-    available: false,
+    href: "https://drive.google.com/uc?export=download&id=1ZabHtF3YCYtdSjPgpQ7EtxrPJzTjX95H",
+    available: true,
   },
   {
     emoji: "📊",
@@ -166,22 +166,35 @@ export default function ResourcesPage() {
             <span className="text-yellow-500 text-sm">Coming soon...</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {freeResources.map((res) => (
-              <div key={res.name}
-                className="bg-gray-900 border border-gray-800 rounded-2xl p-6 opacity-60 cursor-not-allowed">
-                <span className="text-4xl">{res.emoji}</span>
-                <div className="mt-3">
-                  <span className="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded-full">
-                    {res.type}
-                  </span>
-                  <h3 className="font-semibold mt-2">{res.name}</h3>
-                  <p className="text-gray-500 text-sm mt-1">{res.desc}</p>
-                  <span className="text-yellow-500 text-xs mt-3 inline-block">
-                    Coming soon...
-                  </span>
-                </div>
-              </div>
-            ))}
+          {freeResources.map((res) => (
+    <div key={res.name}
+      className={`bg-gray-900 border rounded-2xl p-6 transition
+        ${res.available
+          ? "border-green-800 hover:border-green-400"
+          : "border-gray-800 opacity-60 cursor-not-allowed"
+        }`}>
+      <span className="text-4xl">{res.emoji}</span>
+      <div className="mt-3">
+        <span className="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded-full">
+          {res.type}
+        </span>
+        <h3 className="font-semibold mt-2">{res.name}</h3>
+        <p className="text-gray-500 text-sm mt-1">{res.desc}</p>
+
+        {res.available ? (
+          
+            <a download  name={res.name} href={res.href}
+            className="inline-block mt-4 bg-green-500 hover:bg-green-400 text-black text-xs font-bold px-4 py-2 rounded-lg transition">
+            ⬇ Free Download
+          </a>
+        ) : (
+          <span className="text-yellow-500 text-xs mt-3 inline-block">
+            Coming soon...
+          </span>
+        )}
+      </div>
+    </div>
+  ))}
           </div>
         </div>
       </section>
@@ -219,11 +232,11 @@ export default function ResourcesPage() {
       <div className="flex gap-2 mt-3 flex-wrap">
         <a href={book.flipkart} target="_blank"
           className="bg-yellow-500 hover:bg-yellow-400 text-black text-xs font-bold px-4 py-2 rounded-lg transition">
-          Flipkart →
+          Buy on Flipkart →
         </a>
         <a href={book.affiliate} target="_blank"
           className="bg-blue-500 hover:bg-blue-400 text-white text-xs font-bold px-4 py-2 rounded-lg transition">
-          Amazon →
+          Buy on Amazon →
         </a>
       </div>
     </div>
