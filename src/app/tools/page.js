@@ -9,6 +9,13 @@ const tools = [
     href: "/tools/sip",
     ready: true,
   },
+  // {
+  //   name: "Income Tax Calculator",
+  //   desc: "FY 2025-26 tax calculate karo — old & new regime",
+  //   emoji: "🧾",
+  //   href: "/tools/income-tax",
+  //   ready: true,
+  // },
   {
     name: "Risk/Reward Calculator",
     desc: "Calculate your trade risk/reward ratio",
