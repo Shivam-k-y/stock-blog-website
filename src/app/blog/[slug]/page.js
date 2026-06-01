@@ -17,6 +17,30 @@ async function getPost(slug) {
   `, { slug })
 }
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params
+  const post = await client.fetch(`
+    *[_type == "post" && slug.current == $slug][0] {
+      title,
+      "excerpt": array::join(string::split(pt::text(body), "")[0..160], ""),
+      mainImage
+    }
+  `, { slug })
+
+  return {
+    title: post?.title || "Blog Post",
+    description: post?.excerpt || "Read this article on AlphaWithShivam",
+    openGraph: {
+      title: post?.title,
+      description: post?.excerpt,
+      url: `https://alphawithshivam.vercel.app/blog/${slug}`,
+      images: post?.mainImage
+        ? [{ url: urlFor(post.mainImage).width(1200).url() }]
+        : [],
+    },
+  }
+}
+
 export default async function PostPage({ params }) {
   const { slug } = await params
   const post = await getPost(slug)

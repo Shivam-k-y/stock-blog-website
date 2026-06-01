@@ -3,6 +3,18 @@ import { useState, useEffect, useRef } from "react"
 import { Chart, registerables } from "chart.js"
 Chart.register(...registerables)
 
+export const metadata = {
+  title: "SIP Calculator — Monthly Investment Future Value",
+  description:
+    "Free SIP calculator — apna monthly investment daalo aur dekho 10-20 saal mein kitna banega. Compound interest ke saath.",
+  keywords: ["sip calculator", "sip calculator india", "mutual fund calculator", "compound interest calculator"],
+  openGraph: {
+    title: "SIP Calculator | AlphaWithShivam",
+    description: "Free SIP calculator for Indian investors",
+    url: "https://alphawithshivam.vercel.app/tools/sip",
+  },
+}
+
 export default function SIPCalculator() {
   const [monthly, setMonthly] = useState(5000)
   const [rate, setRate] = useState(12)

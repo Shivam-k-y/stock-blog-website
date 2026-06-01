@@ -15,6 +15,17 @@ async function getLatestPosts() {
   `)
 }
 
+export const metadata = {
+  title: "AlphaWithShivam — Stock Market Hindi Mein Sikho",
+  description:
+    "Free SIP calculator, income tax calculator, stock market blog aur resources — Hindi mein beginners ke liye.",
+  openGraph: {
+    title: "AlphaWithShivam — Stock Market Hindi Mein Sikho",
+    description: "Free tools aur articles — Hindi mein",
+    url: "https://alphawithshivam.vercel.app",
+  },
+}
+
 export default async function Home() {
   const posts = await getLatestPosts()
 

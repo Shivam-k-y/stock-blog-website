@@ -20,6 +20,18 @@ const InputField = ({ label, value, onChange, placeholder }) => (
     </div>
   )
 
+  export const metadata = {
+    title: "Income Tax Calculator FY 2025-26 — Old & New Regime",
+    description:
+      "Free income tax calculator for FY 2025-26 — old regime aur new regime dono. Salary, capital gains, deductions sab include.",
+    keywords: ["income tax calculator", "tax calculator india 2025", "new regime calculator", "old regime calculator"],
+    openGraph: {
+      title: "Income Tax Calculator FY 2025-26 | AlphaWithShivam",
+      description: "Free income tax calculator — old & new regime",
+      url: "https://alphawithshivam.vercel.app/tools/income-tax",
+    },
+  }
+
 export default function IncomeTaxCalculator() {
   const [step, setStep] = useState("calculate")
   const [regime, setRegime] = useState("new")

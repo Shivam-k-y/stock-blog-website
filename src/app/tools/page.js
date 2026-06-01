@@ -39,6 +39,17 @@ const tools = [
   },
 ]
 
+export const metadata = {
+  title: "Free Stock Market Tools — SIP & Tax Calculator",
+  description:
+    "Free online calculators for Indian investors — SIP calculator, income tax calculator, position size calculator aur more.",
+  openGraph: {
+    title: "Free Tools | AlphaWithShivam",
+    description: "Free stock market calculators",
+    url: "https://alphawithshivam.vercel.app/tools",
+  },
+}
+
 export default function ToolsPage() {
   return (
     <div className="min-h-screen bg-gray-950 text-white ">
