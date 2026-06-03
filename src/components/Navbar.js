@@ -11,6 +11,7 @@ export default function Navbar() {
     { href: "/resources", label: "Resources", color: "hover:text-green-400" },
     { href: "/hire-me", label: "Hire Me", color: "hover:text-green-400" },
     { href: "/bundles", label: "Bundles", color: "hover:text-yellow-400" },
+    { href: "/about", label: "About", color: "hover:text-green-400" },
   ]
 
   return (
