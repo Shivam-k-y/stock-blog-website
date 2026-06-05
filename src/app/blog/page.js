@@ -1,11 +1,11 @@
-export const revalidate = 0
-import { client } from "../../../sanity/lib/client"
+export const revalidate = 60
+import { sanityFetch } from "../../../sanity/lib/fetch"
 import { urlFor } from "../../../sanity/lib/image"
 import Link from "next/link"
 import Navbar from "@/components/Navbar"
 
 async function getPosts() {
-  return await client.fetch(`
+  return await sanityFetch(`
     *[_type == "post"] | order(publishedAt desc) {
       title,
       slug,
@@ -46,6 +46,11 @@ export default async function BlogPage() {
       {/* Blog */}
       <section className="px-6 py-12 max-w-4xl mx-auto">
       <div className="max-w-2xl mx-auto">
+        {posts.length === 0 && (
+          <p className="text-gray-500 text-center py-8">
+            Blog posts load nahi ho paaye. Baad mein dubara try karo.
+          </p>
+        )}
         {posts.map((post) => (
           <Link href={`/blog/${post.slug.current}`} key={post.slug.current}>
             <div className="bg-gray-900 rounded-xl mb-6 border border-gray-800 hover:border-green-400 transition overflow-hidden">

@@ -1,11 +1,11 @@
-import { client } from "../../../../sanity/lib/client"
+import { sanityFetch } from "../../../../sanity/lib/fetch"
 import { urlFor } from "../../../../sanity/lib/image"
 import { PortableText } from "@portabletext/react"
 import { notFound } from "next/navigation"
 import Navbar from "@/components/Navbar"
 
 async function getPost(slug) {
-  return await client.fetch(`
+  return await sanityFetch(`
     *[_type == "post" && slug.current == $slug][0] {
       title,
       excerpt,
@@ -15,18 +15,18 @@ async function getPost(slug) {
       "author": author->name,
       "categories": categories[]->title
     }
-  `, { slug })
+  `, { slug }, null)
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params
-  const post = await client.fetch(`
+  const post = await sanityFetch(`
     *[_type == "post" && slug.current == $slug][0] {
       title,
       "excerpt": array::join(string::split(pt::text(body), "")[0..160], ""),
       mainImage
     }
-  `, { slug })
+  `, { slug }, null)
 
   return {
     title: post?.title || "Blog Post",

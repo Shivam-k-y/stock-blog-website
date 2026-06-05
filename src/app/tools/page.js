@@ -21,21 +21,21 @@ const tools = [
     desc: "Calculate your trade risk/reward ratio",
     emoji: "⚖️",
     href: "/tools/rr",
-    ready: false,
+    ready: true,
   },
   {
     name: "Position Size Calculator",
     desc: "Find the right lot size for your trade",
     emoji: "📊",
     href: "/tools/position",
-    ready: false,
+    ready: true,
   },
   {
     name: "Brokerage Calculator",
     desc: "Calculate Zerodha/Upstox charges",
     emoji: "🧾",
     href: "/tools/brokerage",
-    ready: false,
+    ready: true,
   },
 ]
 

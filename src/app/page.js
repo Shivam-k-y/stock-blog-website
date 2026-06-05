@@ -1,11 +1,11 @@
-export const revalidate = 0
-import { client } from "../../sanity/lib/client"
+export const revalidate = 60
+import { sanityFetch } from "../../sanity/lib/fetch"
 import { urlFor } from "../../sanity/lib/image"
 import Link from "next/link"
 import Navbar from "@/components/Navbar"
 
 async function getLatestPosts() {
-  return await client.fetch(`
+  return await sanityFetch(`
     *[_type == "post"] | order(publishedAt desc) [0..2] {
       title,
       slug,
@@ -79,6 +79,11 @@ export default async function Home() {
           <Link href="/blog" className="text-green-400 text-sm hover:underline">See all →</Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {posts.length === 0 && (
+            <p className="text-gray-500 col-span-full text-center py-8">
+              Blog posts load nahi ho paaye. Baad mein dubara try karo.
+            </p>
+          )}
           {posts.map((post) => (
             <Link href={`/blog/${post.slug.current}`} key={post.slug.current}>
               <div className="bg-gray-900 rounded-xl border border-gray-800 hover:border-green-400 transition overflow-hidden">
@@ -119,9 +124,9 @@ export default async function Home() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { name: "SIP Calculator", desc: "Calculate future value", href: "/tools/sip", ready: true },
-            { name: "Risk/Reward", desc: "Calculate trade ratio", href: "/tools/rr", ready: false },
-            { name: "Position Size", desc: "Find the right lot size", href: "/tools/position", ready: false },
-            { name: "Brokerage Calc", desc: "Calculate brokerage charges", href: "/tools/brokerage", ready: false },
+            { name: "Risk/Reward", desc: "Calculate trade ratio", href: "/tools/rr", ready: true },
+            { name: "Position Size", desc: "Find the right lot size", href: "/tools/position", ready: true },
+            { name: "Brokerage Calc", desc: "Calculate brokerage charges", href: "/tools/brokerage", ready: true },
           ].map((tool) => (
             tool.ready ? (
               <Link href={tool.href} key={tool.name}>

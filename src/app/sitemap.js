@@ -26,6 +26,21 @@ export default function sitemap() {
         priority: 0.8,
       },
       {
+        url: "https://alphawithshivam.vercel.app/tools/rr",
+        lastModified: new Date(),
+        priority: 0.8,
+      },
+      {
+        url: "https://alphawithshivam.vercel.app/tools/position",
+        lastModified: new Date(),
+        priority: 0.8,
+      },
+      {
+        url: "https://alphawithshivam.vercel.app/tools/brokerage",
+        lastModified: new Date(),
+        priority: 0.8,
+      },
+      {
         url: "https://alphawithshivam.vercel.app/resources",
         lastModified: new Date(),
         priority: 0.7,
