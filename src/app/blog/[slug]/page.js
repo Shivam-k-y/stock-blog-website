@@ -1,6 +1,7 @@
 import { client } from "../../../../sanity/lib/client"
 import { urlFor } from "../../../../sanity/lib/image"
 import { PortableText } from "@portabletext/react"
+import { notFound } from "next/navigation"
 import Navbar from "@/components/Navbar"
 
 async function getPost(slug) {
@@ -44,6 +45,8 @@ export async function generateMetadata({ params }) {
 export default async function PostPage({ params }) {
   const { slug } = await params
   const post = await getPost(slug)
+
+  if (!post) notFound()
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">

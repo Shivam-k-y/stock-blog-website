@@ -21,12 +21,12 @@ export default function AboutPage() {
           </div>
           <div>
             <h1 className="text-3xl font-bold mb-2">
-              Hey, I'm <span className="text-green-400">Shivam Kumar</span> 👋
+              Hey, I&apos;m <span className="text-green-400">Shivam Kumar</span> 👋
             </h1>
             <p className="text-gray-400 leading-relaxed">
               Stock market educator, web developer and content creator from India.
               I believe financial education should be free and accessible to everyone —
-              that's why I created AlphaWithShivam.
+              that&apos;s why I created AlphaWithShivam.
             </p>
             <div className="flex gap-3 mt-4 flex-wrap">
               <a href="https://www.youtube.com/@AlphaWithShivam" target="_blank"
@@ -57,7 +57,7 @@ export default function AboutPage() {
               was either in English or too complicated to understand.
             </p>
             <p>
-              That's when I decided to start creating content in Hindi —
+              That&apos;s when I decided to start creating content in Hindi —
               simple, practical and beginner-friendly. No jargon,
               no unnecessary complexity — just clear explanations that
               actually help people make better financial decisions.
@@ -146,11 +146,11 @@ export default function AboutPage() {
         {/* CTA */}
         <section className="text-center bg-gray-900 border border-gray-800 rounded-2xl p-8">
           <h2 className="text-2xl font-bold mb-3">
-            Let's <span className="text-green-400">Connect!</span>
+            Let&apos;s <span className="text-green-400">Connect!</span>
           </h2>
           <p className="text-gray-400 mb-6">
             Have a question, collaboration idea or want a website built?
-            Let's talk!
+            Let&apos;s talk!
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <a href="https://wa.me/916202823588" target="_blank"

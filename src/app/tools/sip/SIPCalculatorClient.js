@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import { Chart, registerables } from "chart.js"
 Chart.register(...registerables)
 
@@ -15,15 +15,12 @@ const InputWithSlider = ({
   min, max, step, prefix, suffix,
   displayValue
 }) => {
-  const [inputVal, setInputVal] = useState(String(value))
-
-  useEffect(() => {
-    setInputVal(String(value))
-  }, [value])
+  const [draft, setDraft] = useState(null)
+  const inputVal = draft !== null ? draft : String(value)
 
   const handleInput = (e) => {
     const raw = e.target.value.replace(/[^0-9.]/g, "")
-    setInputVal(raw)
+    setDraft(raw)
     const num = parseFloat(raw)
     if (!isNaN(num)) {
       const clamped = Math.min(Math.max(num, min), max)
@@ -35,15 +32,21 @@ const InputWithSlider = ({
     const num = parseFloat(inputVal)
     if (isNaN(num) || num < min) {
       onChange(min)
-      setInputVal(String(min))
     } else if (num > max) {
       onChange(max)
-      setInputVal(String(max))
     } else {
       onChange(num)
-      setInputVal(String(num))
     }
+    setDraft(null)
   }
+
+  const handleSliderChange = useCallback((e) => {
+    const val = step % 1 !== 0
+      ? parseFloat(e.target.value)
+      : parseInt(e.target.value)
+    setDraft(null)
+    onChange(val)
+  }, [onChange, step])
 
   return (
     <div className="mb-6">
@@ -75,12 +78,7 @@ const InputWithSlider = ({
         max={max}
         step={step}
         value={value}
-        onChange={(e) => {
-          const val = step % 1 !== 0
-            ? parseFloat(e.target.value)
-            : parseInt(e.target.value)
-          onChange(val)
-        }}
+        onChange={handleSliderChange}
         className="w-full accent-green-400"
       />
       <div className="flex justify-between text-xs text-gray-600 mt-1">

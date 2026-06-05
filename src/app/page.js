@@ -1,3 +1,4 @@
+export const revalidate = 0
 import { client } from "../../sanity/lib/client"
 import { urlFor } from "../../sanity/lib/image"
 import Link from "next/link"
@@ -163,7 +164,7 @@ export default async function Home() {
                   <div className="font-semibold text-sm">{res.name}</div>
                   {res.available ? (
           
-                    <a download  name={res.name} href={res.href}
+                    <a download href={res.href}
                       className="inline-block mt-4 bg-green-500 hover:bg-green-400 text-black text-xs font-bold px-4 py-2 rounded-lg transition">
                       ⬇ Free Download
                     </a>
@@ -190,6 +191,7 @@ export default async function Home() {
             <a
               href="https://www.youtube.com/@AlphaWithShivam"
               target="_blank"
+              rel="noopener noreferrer"
               className="bg-red-600 hover:bg-red-500 text-white font-bold px-6 py-3 rounded-lg inline-block transition">
               ▶ Subscribe to the Channel
             </a>
