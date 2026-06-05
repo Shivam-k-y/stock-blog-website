@@ -156,8 +156,8 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { name: "Candlestick PDF", type: "Beginner guide", emoji: "📄" , available: true,href: "https://drive.google.com/uc?export=download&id=1ZabHtF3YCYtdSjPgpQ7EtxrPJzTjX95H" },
-              { name: "Trading Journal", type: "Excel template", emoji: "📊" , available: false,href: "#" },
-              { name: "Beginner Checklist", type: "Free download", emoji: "✅" ,available: false,href: "#" },
+              { name: "Trading Journal", type: "Excel template", emoji: "📊", available: true, href: "/resources/Trading Journal.xlsx" },
+              { name: "Beginner Checklist", type: "Interactive guide", emoji: "✅", available: true, href: "/resources/beginners-checklist", page: true },
             ].map((res) => (
               <div key={res.name} className={`bg-gray-900 rounded-xl border border-gray-800 p-5 flex gap-4 items-center 
                 ${res.available
@@ -168,11 +168,17 @@ export default async function Home() {
                 <div>
                   <div className="font-semibold text-sm">{res.name}</div>
                   {res.available ? (
-          
-                    <a download href={res.href}
-                      className="inline-block mt-4 bg-green-500 hover:bg-green-400 text-black text-xs font-bold px-4 py-2 rounded-lg transition">
-                      ⬇ Free Download
-                    </a>
+                    res.page ? (
+                      <Link href={res.href}
+                        className="inline-block mt-4 bg-green-500 hover:bg-green-400 text-black text-xs font-bold px-4 py-2 rounded-lg transition">
+                        View Checklist →
+                      </Link>
+                    ) : (
+                      <a download href={res.href}
+                        className="inline-block mt-4 bg-green-500 hover:bg-green-400 text-black text-xs font-bold px-4 py-2 rounded-lg transition">
+                        ⬇ Free Download
+                      </a>
+                    )
                   ) : (
                       <span className="text-yellow-500 text-xs mt-3 inline-block">
                         Coming soon...

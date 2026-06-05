@@ -13,18 +13,19 @@ const freeResources = [
   {
     emoji: "📊",
     name: "Trading Journal Template",
-    desc: "Track your trades, analyze mistakes and improve performance",
-    type: "Excel Template",
-    href: "#",
-    available: false,
+    desc: "Track your trades, analyze mistakes and improve performance — Excel / Google Sheets compatible",
+    type: "CSV Template",
+    href: "/resources/Trading Journal.xlsx",
+    available: true,
   },
   {
     emoji: "✅",
     name: "Beginner's Checklist",
     desc: "Everything you need to do before placing your first trade",
-    type: "Free PDF",
-    href: "#",
-    available: false,
+    type: "Interactive Guide",
+    href: "/resources/beginners-checklist",
+    available: true,
+    page: true,
   },
 ]
 
@@ -192,11 +193,17 @@ export default function ResourcesPage() {
         <p className="text-gray-500 text-sm mt-1">{res.desc}</p>
 
         {res.available ? (
-          
-            <a download  name={res.name} href={res.href}
-            className="inline-block mt-4 bg-green-500 hover:bg-green-400 text-black text-xs font-bold px-4 py-2 rounded-lg transition">
-            ⬇ Free Download
-          </a>
+          res.page ? (
+            <Link href={res.href}
+              className="inline-block mt-4 bg-green-500 hover:bg-green-400 text-black text-xs font-bold px-4 py-2 rounded-lg transition">
+              View Checklist →
+            </Link>
+          ) : (
+            <a download href={res.href}
+              className="inline-block mt-4 bg-green-500 hover:bg-green-400 text-black text-xs font-bold px-4 py-2 rounded-lg transition">
+              ⬇ Free Download
+            </a>
+          )
         ) : (
           <span className="text-yellow-500 text-xs mt-3 inline-block">
             Coming soon...

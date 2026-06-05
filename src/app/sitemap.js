@@ -46,6 +46,11 @@ export default function sitemap() {
         priority: 0.7,
       },
       {
+        url: "https://alphawithshivam.vercel.app/resources/beginners-checklist",
+        lastModified: new Date(),
+        priority: 0.7,
+      },
+      {
         url: "https://alphawithshivam.vercel.app/bundles",
         lastModified: new Date(),
         priority: 0.7,
