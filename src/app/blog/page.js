@@ -1,3 +1,4 @@
+export const revalidate = 0
 import { client } from "../../../sanity/lib/client"
 import { urlFor } from "../../../sanity/lib/image"
 import Link from "next/link"
