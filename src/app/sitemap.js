@@ -56,6 +56,11 @@ export default function sitemap() {
         priority: 0.7,
       },
       {
+        url: "https://alphawithshivam.vercel.app/about",
+        lastModified: new Date(),
+        priority: 0.6,
+      },
+      {
         url: "https://alphawithshivam.vercel.app/hire-me",
         lastModified: new Date(),
         priority: 0.6,
