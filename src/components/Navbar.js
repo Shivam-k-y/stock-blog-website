@@ -1,9 +1,18 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const links = [
     { href: "/blog", label: "Blog", color: "hover:text-green-400" },
@@ -15,7 +24,11 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="border-b border-gray-800 px-6 py-4">
+    <nav className={`sticky top-0 z-50 px-6 py-4 transition-all duration-300 ${
+      scrolled 
+        ? "glass-nav" 
+        : "bg-gray-950 border-b border-gray-800"
+    }`}>
       <div className="flex justify-between items-center">
 
         {/* Logo */}

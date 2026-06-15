@@ -24,3 +24,163 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ═══════════════════════════════════════════
+   ANIMATED GRADIENT HERO BACKGROUND
+   ═══════════════════════════════════════════ */
+.hero-gradient {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 50%, rgba(74, 222, 128, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 350px at 80% 30%, rgba(74, 222, 128, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 300px at 50% 80%, rgba(34, 197, 94, 0.04) 0%, transparent 70%);
+  animation: gradientShift 8s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-gradient > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes gradientShift {
+  0% {
+    transform: scale(1) translateX(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1) translateX(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.05) translateX(-10px);
+    opacity: 0.8;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   GLASSMORPHISM NAVBAR
+   ═══════════════════════════════════════════ */
+.glass-nav {
+  background: rgba(3, 7, 18, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(74, 222, 128, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ═══════════════════════════════════════════
+   CARD HOVER LIFT
+   ═══════════════════════════════════════════ */
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(74, 222, 128, 0.08);
+}
+
+/* ═══════════════════════════════════════════
+   BUTTON GLOW PULSE
+   ═══════════════════════════════════════════ */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.3), transparent, rgba(74, 222, 128, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-glow:hover::after {
+  opacity: 1;
+  animation: btnPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes btnPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════
+   SKELETON LOADING SHIMMER
+   ═══════════════════════════════════════════ */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #111827 25%,
+    #1f2937 50%,
+    #111827 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 0.75rem;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ═══════════════════════════════════════════
+   TIMELINE
+   ═══════════════════════════════════════════ */
+.timeline-line {
+  position: relative;
+}
+
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #4ade80, transparent);
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 12px rgba(74, 222, 128, 0.5);
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════
+   REDUCED MOTION
+   ═══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient::before {
+    animation: none;
+  }
+  .skeleton {
+    animation: none;
+  }
+  .btn-glow:hover::after {
+    animation: none;
+  }
+  .card-hover:hover {
+    transform: none;
+  }
+}

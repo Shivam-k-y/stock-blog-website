@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer"
 import WhatsAppButton from "@/components/WhatsAppButton"
+import PageTransition from "@/components/PageTransition"
 import { GoogleAnalytics } from "@next/third-parties/google"
 
 const geistSans = Geist({
@@ -70,8 +71,13 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children} <Footer /> <WhatsAppButton /> 
-      <GoogleAnalytics gaId="G-QWGDZ8P6YJ" />
+      <body className="min-h-full flex flex-col">
+        <PageTransition>
+          {children}
+        </PageTransition>
+        <Footer />
+        <WhatsAppButton />
+        <GoogleAnalytics gaId="G-QWGDZ8P6YJ" />
       </body>
     </html>
   );
