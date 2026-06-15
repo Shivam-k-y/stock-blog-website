@@ -14,7 +14,7 @@ export default function HomeContent({ posts }) {
       {/* ═══════════════════════════════════════
           HERO — Background video + text reveal
          ═══════════════════════════════════════ */}
-      <section className="relative text-center py-20 px-4 border-b border-gray-800 overflow-hidden h-screen flex items-center justify-center">
+      <section className="relative text-center py-20 px-4 border-b border-gray-800 overflow-hidden min-h-[90vh] flex items-center justify-center">
         {/* Background Video */}
         <video
           autoPlay
