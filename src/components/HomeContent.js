@@ -12,43 +12,64 @@ export default function HomeContent({ posts }) {
     <main className="min-h-screen bg-gray-950 text-white">
 
       {/* ═══════════════════════════════════════
-          HERO — Animated gradient + text reveal
+          HERO — Background video + text reveal
          ═══════════════════════════════════════ */}
-      <section className="hero-gradient text-center py-20 px-4 border-b border-gray-800">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-          <AnimatedText text="Stock Market" />
-          <br />
-          <span className="text-green-400">
-            <AnimatedText text="Hindi Mein" delay={0.4} />
-          </span>
-          <br />
-          <AnimatedText text="Samjho Aur Invest Wisely." delay={0.7} />
-        </h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="text-gray-400 text-lg mb-8 max-w-xl mx-auto"
+      <section className="relative text-center py-20 px-4 border-b border-gray-800 overflow-hidden h-screen flex items-center justify-center">
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          poster=""
         >
-          Free tools, expert articles, and resources — for beginners to experts
-        </motion.p>
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.5 }}
-          className="flex gap-4 justify-center flex-wrap"
-        >
-          <Link href="/blog"
-            className="bg-green-500 hover:bg-green-400 text-black font-bold px-6 py-3 rounded-lg transition btn-glow">
-            Read the Blog →
-          </Link>
-          <Link href="/tools"
-            className="border border-gray-700 hover:border-green-400 px-6 py-3 rounded-lg transition btn-glow">
-            Try Free Tools
-          </Link>
-        </motion.div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gray-950/75 z-[1]" />
+
+        {/* Animated Gradient Overlay (on top of dark overlay) */}
+        <div className="absolute inset-0 z-[2] pointer-events-none hero-gradient" />
+
+        {/* Content */}
+        <div className="relative z-[3]">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+            <AnimatedText text="Stock Market" />
+            <br />
+            <span className="text-green-400">
+              <AnimatedText text="Hindi Mein" delay={0.4} />
+            </span>
+            <br />
+            <AnimatedText text="Samjho Aur Invest Wisely." delay={0.7} />
+          </h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            className="text-gray-300 text-lg mb-8 max-w-xl mx-auto"
+          >
+            Free tools, expert articles, and resources — for beginners to experts
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.5 }}
+            className="flex gap-4 justify-center flex-wrap"
+          >
+            <Link href="/blog"
+              className="bg-green-500 hover:bg-green-400 text-black font-bold px-6 py-3 rounded-lg transition btn-glow">
+              Read the Blog →
+            </Link>
+            <Link href="/tools"
+              className="border border-gray-700 hover:border-green-400 px-6 py-3 rounded-lg transition btn-glow">
+              Try Free Tools
+            </Link>
+          </motion.div>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════
